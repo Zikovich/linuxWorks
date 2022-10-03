@@ -1,8 +1,11 @@
 
+## Prerequist
+
+sudo apt install indent
+
 ## How to build: 
 
-gcc -c myFemtoShell.c 
-gcc myFemtoShell.o -o myFemtoShell 
+make
 
 ## How to excute:
  ./myFemtoShell 
@@ -21,4 +24,11 @@ Please enter you command :
 Please enter you command : 
 Please enter you command : 
 Please enter you command : exit
-Exit Ziko Femto Shell! See you again :) 
+Exit Ziko Femto Shell! See you again :)
+
+
+## Known Bugs
+
+1. in mv command, wrong handle of the unexist src file
+2. the created file for cp and mv has wrong permission
+3. may think in more smart way to mv the file specially in case of the same location, can be only rename 
