@@ -1,5 +1,5 @@
 /*
- * myfemtoshell.h
+ * commandshell.h
  * 
  * Copyright 2022 zikovich <https://github.com/Zikovich>
  * 
@@ -21,14 +21,10 @@
  * 
  */
 
-#ifndef MYFEMTOSHELL_H_		/* Include guard */
-#define MYFEMTOSHELL_H_
+#ifndef COMMANDSHELL_H_			/* Include guard */
+#define COMMANDSHELL_H_
+#include <stdbool.h>
 
+bool commandShell(char *lin, size_t len);
 
-#include "mycp.h"
-#include "myecho.h"
-#include "mypwd.h"
-#include "mymv.h"
-#include "commandshell.h"
-
-#endif				// MYFEMTOSHELL_H_
+#endif				// COMMANDSHELL_H_

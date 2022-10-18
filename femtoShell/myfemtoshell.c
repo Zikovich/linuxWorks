@@ -52,6 +52,7 @@ int main()
     size_t len = 0;
     ssize_t nread;
     char *tmpBuf = NULL;
+	bool retError = false;
 
     usage();
 
@@ -67,16 +68,21 @@ int main()
 	} else if ((strcmp("exit\n", line) == 0)
 		   || (strcmp("q\n", line) == 0)) {
 	    break;
-	} else if (strncmp("pwd", line, 3) == 0) {
+	} else if (strncmp("mypwd", line, 3) == 0) {
 	    pwd(line, len);
-	} else if (strncmp("echo", line, 4) == 0) {
+	} else if (strncmp("myecho", line, 4) == 0) {
 	    echo(line, len);
-	} else if (strncmp("cp", line, 2) == 0) {
+	} else if (strncmp("mycp", line, 2) == 0) {
 	    cp(line, len);
-	} else if (strncmp("mv", line, 2) == 0) {
+	} else if (strncmp("mymv", line, 2) == 0) {
 	    mv(line, len);
 	} else {
-	    printf("Sorry, Your command: < %s > is not supported yet \n",
+	   retError = commandShell(line, len);
+	} 
+	
+	if (retError)
+	{
+		printf("Sorry, Your command: < %s > is not supported yet \n",
 		   line);
 	}
 	free(line);

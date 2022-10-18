@@ -13,7 +13,7 @@ BINS := myfemtoshell
 
 all: myfemtoshell
 
-myfemtoshell: myfemtoshell.o mycp.o mymv.o myecho.o mypwd.o utils.o
+myfemtoshell: myfemtoshell.o mycp.o mymv.o myecho.o mypwd.o utils.o commandshell.o
 		@echo "Checking.."
 		gcc  *.o -o myfemtoshell
 
@@ -45,6 +45,10 @@ mypwd.o: mypwd.c mypwd.h
 utils.o: utils.c utils.h
 		@echo "Creating object mypwd.."		
 		gcc -c utils.c
+
+commandshell.o: commandshell.c commandshell.h
+		@echo "Creating object commandshell.."		
+		gcc -c commandshell.c
 		
 clean:
 		@echo "Cleaning up..."
