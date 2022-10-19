@@ -30,7 +30,7 @@
 #include "utils.h"
 #include "mycp.h"
 
-#define CP_COMMAND_LEN 2
+#define CP_COMMAND_LEN 4
 
 /*
  * 

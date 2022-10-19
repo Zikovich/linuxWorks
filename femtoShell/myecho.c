@@ -26,7 +26,7 @@
 #include "utils.h"
 #include "myecho.h"
 
-#define ECHO_COMMAND 4
+#define ECHO_COMMAND 6
 int echo(char *lin, size_t len)
 {
     char **argv = NULL;

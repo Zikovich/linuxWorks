@@ -52,11 +52,29 @@ bool commandShell(char *lin, size_t len)
 		printf("Child terminated \n");
 	} else
 	{
-		char * argvTmp[] = {NULL};
+		char * argvTmp[argc+1];
+		
 		char * envTmp[] = {NULL};
 		int status;
 
-		execvpe(argv[0],argvTmp,envTmp);
+		for (int i =0; i< argc;i++)
+		{
+			argvTmp[i] = argv[i];
+		}
+		argvTmp[argc] = NULL;
+
+		//printf("arpc = %d \n", argc);
+		//printf("sizeof(argvTmp = %d \n", sizeof(argvTmp));
+		//printf("sizeof(argv = %d \n", sizeof(argv));
+
+		for (int i = 0; i<argc; i++)
+		{
+			printf("argv[%d] = %s \n",i,argv[i]);
+		}
+
+		int retError = execvpe(argvTmp[0],argvTmp,envTmp);
+
+		printf("errono = %d \n", retError);
 
 		printf("Excute command failed \n");
 		exit(status);

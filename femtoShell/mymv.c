@@ -29,7 +29,7 @@
 #include "utils.h"
 #include "mymv.h"
 
-#define MV_COMMAND_LEN 2
+#define MV_COMMAND_LEN 4
 
 int mv(char *lin, size_t len)
 {
